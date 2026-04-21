@@ -20,8 +20,12 @@ The dataset used in this project is:
 
 Install the required Python packages:
 
-```bash
+
 pip install transformers chromadb sentence-transformers langchain_community langchain-text-splitters pypdf tqdm torch
 
-## then run
+## Then run
 python rag_matrix.py
+
+---
+
+## Download the zip file from this github to have access to the project folder
