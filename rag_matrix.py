@@ -140,17 +140,45 @@ print(answer)
 # 7. Interactive loop
 # ============================================================
 
-print("\n=== RAG System Ready ===")
-print("Type your question about the document (or 'quit' to exit)\n")
+#print("\n=== RAG System Ready ===")
+#print("Type your question about the document (or 'quit' to exit)\n")
 
-while True:
-    user_question = input("Your question: ").strip()
+#while True:
+    #user_question = input("Your question: ").strip()
 
-    if user_question.lower() in ("quit", "exit", "q"):
-        break
+    #if user_question.lower() in ("quit", "exit", "q"):
+        #break
 
-    if not user_question:
-        continue
+    #if not user_question:
+       # continue
 
-    response, _ = ask_rag(user_question)
-    print(f"\nAnswer: {response}\n")
+    #response, _ = ask_rag(user_question)
+    #print(f"\nAnswer: {response}\n")
+
+# ============================================================
+# --- 8. Gradio Interface ---
+# ============================================================
+
+import gradio as gr
+
+def ask_interface(question):
+  
+  
+    answer, _ = ask_rag(question)
+    return answer
+
+
+demo = gr.Interface(
+    fn=ask_interface,
+    inputs=gr.Textbox(
+        lines=2,
+        placeholder="Ask a question about the document..."
+    ),
+    outputs="text",
+    title="RAG Question Answering System",
+    description="Ask questions about the document using a Retrieval-Augmented Generation system."
+)
+
+if __name__ == "__main__":
+    print("\nLaunching Gradio interface...")
+    demo.launch()
