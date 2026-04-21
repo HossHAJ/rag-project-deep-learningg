@@ -21,8 +21,8 @@ The dataset used in this project is:
 Install the required Python packages:
 
 
-pip install transformers chromadb sentence-transformers langchain_community langchain-text-splitters pypdf tqdm torch
-pip install gradio
+pip install transformers chromadb sentence-transformers langchain_community langchain-text-splitters pypdf tqdm torch gradio
+
 
 ## Then run
 python rag_matrix.py
