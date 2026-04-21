@@ -28,6 +28,8 @@ pip install transformers chromadb sentence-transformers langchain_community lang
 python rag_matrix.py
 and click on the html link
 
+## To stop the server do ctrl+c
+
 ---
 
 ## Download the zip file from this github to have access to the project folder
